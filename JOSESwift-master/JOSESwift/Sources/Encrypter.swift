@@ -53,7 +53,6 @@ public struct Encrypter<KeyType> {
             contentEncryptionAlgorithm: contentEncryptionAlgorithm,
             encryptionKey: encryptionKey
         )
-        print("Encrypter ::::: \(mode)")
         guard let keyManagementMode = mode else { return nil }
         self.keyManagementMode = keyManagementMode
     }

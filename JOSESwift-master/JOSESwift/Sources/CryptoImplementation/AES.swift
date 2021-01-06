@@ -116,7 +116,6 @@ enum AESCrypt {
             return ciphertext
             
         case .AES256GCM:
-                print("AESCrypt ::::::: AES256GCM")
                 let ivkey = initializationVector.hexEncodedString()
                 let key = encryptionKey.hexEncodedString()
                 let gcm = GCM(iv: [UInt8](hex: ivkey), mode: .combined)

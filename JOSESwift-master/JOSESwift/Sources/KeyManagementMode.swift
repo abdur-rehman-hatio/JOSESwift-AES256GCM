@@ -36,11 +36,9 @@ extension KeyManagementAlgorithm {
         contentEncryptionAlgorithm: ContentEncryptionAlgorithm,
         encryptionKey: KeyType
     ) -> EncryptionKeyManagementMode? {
-        print("KeyManagementAlgorithm ::: \(self)")
         switch self {
         case .RSA1_5, .RSAOAEP, .RSAOAEP256:
             guard let recipientPublicKey = cast(encryptionKey, to: RSAKeyEncryption.KeyType.self) else {
-                print("KeyManagementAlgorithm :::: nil")
                 return nil
             }
 
@@ -71,14 +69,11 @@ extension KeyManagementAlgorithm {
         contentEncryptionAlgorithm: ContentEncryptionAlgorithm,
         decryptionKey: KeyType
     ) -> DecryptionKeyManagementMode? {
-        print("makeDecryptionKeyManagementMode ::::::")
         switch self {
         case .RSA1_5, .RSAOAEP, .RSAOAEP256:
             guard let recipientPrivateKey = cast(decryptionKey, to: RSAKeyEncryption.KeyType.self) else {
-                print("makeDecryptionKeyManagementMode :::::: nil")
                 return nil
             }
-            print("makeDecryptionKeyManagementMode :::::: recipientPrivateKey ::: \(recipientPrivateKey)")
             return RSAKeyEncryption.DecryptionMode(
                 keyManagementAlgorithm: self,
                 contentEncryptionAlgorithm: contentEncryptionAlgorithm,

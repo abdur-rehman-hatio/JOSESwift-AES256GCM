@@ -51,7 +51,6 @@ public struct Decrypter {
             contentEncryptionAlgorithm: contentEncryptionAlgorithm,
             decryptionKey: decryptionKey
         )
-        print("Decrypter :::: \(mode)")
         guard let keyManagementMode = mode else { return nil }
         self.keyManagementMode = keyManagementMode
     }
@@ -64,8 +63,7 @@ public struct Decrypter {
         guard let enc = context.protectedHeader.contentEncryptionAlgorithm, enc == contentEncryptionAlgorithm else {
             throw JWEError.contentEncryptionAlgorithmMismatch
         }
-        print("decrypt ::: 1")
-
+        
         let contentEncryptionKey = try keyManagementMode.determineContentEncryptionKey(from: context.encryptedKey)
 
         let contentDecryptionContext = ContentDecryptionContext(

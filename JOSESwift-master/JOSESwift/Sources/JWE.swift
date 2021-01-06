@@ -103,7 +103,6 @@ public struct JWE {
     ///         If a component cannot be initialized from its data object.
     public init(compactSerialization: String) throws {
         self = try JOSEDeserializer().deserialize(JWE.self, fromCompactSerialization: compactSerialization)
-        print("compactSerialization :::: \(self)")
     }
 
     /// Constructs a JWE object from a given compact serialization data object.
@@ -188,14 +187,12 @@ public struct JWE {
             ciphertext: ciphertext,
             authenticationTag: authenticationTag
         )
-        print("decrypt :::::::: method ::: \(context)")
         guard
             decrypter.keyManagementAlgorithm == header.keyManagementAlgorithm,
             decrypter.contentEncryptionAlgorithm == header.contentEncryptionAlgorithm
         else {
             throw JOSESwiftError.decryptingFailed(description: "JWE header algorithms do not match encrypter algorithms.")
         }
-        print("decrypt :::::::: method ::: 1")
         do {
             let compressor = try CompressorFactory.makeCompressor(algorithm: header.compressionAlgorithm)
             let decryptedData = try decrypter.decrypt(context)

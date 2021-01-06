@@ -72,7 +72,6 @@ extension RSAKeyEncryption.EncryptionMode: EncryptionKeyManagementMode {
 
 extension RSAKeyEncryption.DecryptionMode: DecryptionKeyManagementMode {
     func determineContentEncryptionKey(from encryptedKey: Data) throws -> Data {
-        print("determineContentEncryptionKey ::::: \(encryptedKey)")
         // Generate a random CEK to substitue in case we fail to decrypt the CEK.
         // This is to prevent the MMA (Million Message Attack) against RSA.
         // For detailed information, please refer to RFC-3218 (https://tools.ietf.org/html/rfc3218#section-2.3.2),
@@ -81,15 +80,11 @@ extension RSAKeyEncryption.DecryptionMode: DecryptionKeyManagementMode {
         let randomContentEncryptionKey = try SecureRandom.generate(count: contentEncryptionAlgorithm.keyLength)
 
         let decryptedKey = try? RSA.decrypt(encryptedKey, with: recipientPrivateKey, and: keyManagementAlgorithm)
-        print("determineContentEncryptionKey ::: decryptedKey ::: \(decryptedKey)")
-
-        guard
-            let contentEncryptionKey = decryptedKey,
+        guard let contentEncryptionKey = decryptedKey,
             contentEncryptionKey.count == contentEncryptionAlgorithm.keyLength
         else {
             return randomContentEncryptionKey
         }
-        print("contentEncryptionKey :::: \(contentEncryptionKey)")
         return contentEncryptionKey
     }
 }

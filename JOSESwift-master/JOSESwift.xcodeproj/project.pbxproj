@@ -122,6 +122,7 @@
 		C8EE14541FAC797500A616E4 /* RSAVerifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EE14531FAC797500A616E4 /* RSAVerifierTests.swift */; };
 		C8F096501FC56B25000BEE4D /* RSAEncryptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F0964F1FC56B25000BEE4D /* RSAEncryptionTests.swift */; };
 		D16714FA258A5B9A00F07869 /* AESGCmEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16714F9258A5B9A00F07869 /* AESGCmEncryption.swift */; };
+		D1F241AA25A4B2C100A10B7B /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F241A925A4B2C100A10B7B /* SwCrypt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +257,7 @@
 		C8F0964F1FC56B25000BEE4D /* RSAEncryptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAEncryptionTests.swift; sourceTree = "<group>"; };
 		D16714F7258A4B9800F07869 /* JOSESwift copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "JOSESwift copy-Info.plist"; path = "/Users/swesree/Downloads/JOSESwift-master/JOSESwift copy-Info.plist"; sourceTree = "<absolute>"; };
 		D16714F9258A5B9A00F07869 /* AESGCmEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESGCmEncryption.swift; sourceTree = "<group>"; };
+		D1F241A925A4B2C100A10B7B /* SwCrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 		653355281F8F6B4A00A660C6 /* JWE */ = {
 			isa = PBXGroup;
 			children = (
+				D1F241A925A4B2C100A10B7B /* SwCrypt.swift */,
 				D16714F8258A5B7700F07869 /* AES256GCM */,
 				6558164523F44EBF00EA5FEC /* KeyManagementMode */,
 				6558164B23F45CAC00EA5FEC /* ContentEncryption */,
@@ -857,6 +860,7 @@
 				6558164D23F45CC200EA5FEC /* ContentEncryption.swift in Sources */,
 				6571F6231F7BF786004D53C5 /* JWSHeader.swift in Sources */,
 				D16714FA258A5B9A00F07869 /* AESGCmEncryption.swift in Sources */,
+				D1F241AA25A4B2C100A10B7B /* SwCrypt.swift in Sources */,
 				65D8680F1F7CE35000769BBF /* RSAVerifier.swift in Sources */,
 				6558164A23F456F700EA5FEC /* KeyManagementMode.swift in Sources */,
 				65826AB22028696000AFFC46 /* RSAKeyCodable.swift in Sources */,
