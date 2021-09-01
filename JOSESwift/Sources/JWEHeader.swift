@@ -236,10 +236,10 @@ extension JWEHeader: CommonHeaderParameterSpace {
     /// corresponding to the key used to encrypt the JWE.
     public var x5tS256: String? {
         get {
-            return parameters["x5tS256"] as? String
+            return parameters["x5t#S256"] as? String
         }
         set {
-            parameters["x5tS256"] = newValue
+            parameters["x5t#S256"] = newValue
         }
     }
 
