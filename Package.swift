@@ -8,11 +8,11 @@ let package = Package(
         .library(name: "JOSESwift", targets: ["JOSESwift"])
     ],
     dependencies: [
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.3.1")
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.3.1"),
     ],
     targets: [
         .target(name: "JOSESwift", dependencies: [
-            .product(name: "CryptoSwift", package: "CryptoSwift")
-        ], path: "JOSESwift")
+            "CryptoSwift"
+        ], path: "Source")
     ],
     swiftLanguageVersions: [.v5])
