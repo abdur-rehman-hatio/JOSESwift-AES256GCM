@@ -3,10 +3,10 @@
     {
       "identity" : "cryptoswift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/krzyzanowskim/CryptoSwift",
+      "location" : "https://github.com/abdur-rehman-hatio/CryptoSwift",
       "state" : {
-        "revision" : "729e01bc9b9dab466ac85f21fb9ee2bc1c61b258",
-        "version" : "1.8.4"
+        "branch" : "main",
+        "revision" : "d27a23cfc28f8a3fd926e2eb094ccf37788df1fb"
       }
     }
   ],

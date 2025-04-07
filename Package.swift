@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "JOSESwift", targets: ["JOSESwift"])
     ],
     dependencies: [
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift", exact: "1.8.4")
+        .package(url: "https://github.com/abdur-rehman-hatio/CryptoSwift", branch: "main")
     ],
     targets: [
         .target(name: "JOSESwift", dependencies: [
